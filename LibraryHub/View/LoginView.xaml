@@ -77,10 +77,10 @@
             <StackPanel Width="450" Orientation="Vertical" Margin="0,10,0,10">
                 <Image Source="/IMG/user.png" Width="50" Height="50" Margin="0,25,0,0"/>
 
-                <TextBlock Text="Bienvido" Foreground="White" FontSize="25" FontWeight="Medium"
+                <TextBlock Text="Bienvido" Foreground="White" FontSize="25" FontWeight="Medium" Margin="0,15,0,0"
                            FontFamily="Monserrat" HorizontalAlignment="Center"/>
                 <TextBlock Text="Un libro es el puente hacia un mundo de posibilidades, y nuestra biblioteca es la llave que te invita a cruzarlo." 
-                           Foreground="LightGray" FontSize="12" FontWeight="Medium"
+                           Foreground="LightGray" FontSize="12" FontWeight="Medium" Margin="0,15,0,0"
                            TextWrapping="Wrap" TextAlignment="Center"/>
                 <!--Caja y texto de Usuario-->
                 <TextBlock Text="UserName" Foreground="LightGray" FontSize="12" FontWeight="Medium"
@@ -95,7 +95,7 @@
                 </TextBox>
                 <!--Caja y texto de password-->
                 <TextBlock Text="Contraseña" Foreground="LightGray" FontSize="12" FontWeight="Medium"
-                           FontFamily="Monserrat" Margin="0,35,0,0"/>
+                           FontFamily="Monserrat" Margin="0,45,0,0"/>
                 <PasswordBox x:Name="txtPass" FontSize="13" FontWeight="Medium" FontFamily="Monserrrat"
                          Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,1"
                          Height="28" VerticalContentAlignment="Center" Margin="0,5,0,0" Padding="30,0,0,0">
@@ -104,6 +104,35 @@
                                     Stretch="Uniform" AlignmentX="Left"/>
                     </PasswordBox.Background>
                 </PasswordBox>
+                
+                <!--boton de login-->
+                <Button x:Name="btnLogIng"  BorderThickness="0" 
+                        Cursor="Hand" Grid.Column="2" Margin="0,50,0,0" Click="btnLogIng_Click">
+                    <Image Source="/IMG/login.png" Stretch="Uniform" Width="50" Height="50"/>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#2F2F30"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1A1A1A"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="60" CornerRadius="30" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+                    <TextBlock Text="Olvido su contraseña?" Foreground="LightGray" FontSize="12" FontWeight="Medium"
+                           FontFamily="Monserrat" />
+                    <TextBlock Text="Recuperar" Foreground="White" FontSize="12" FontWeight="Medium"
+                           FontFamily="Monserrat" Margin="10,0,0,0" Cursor="Hand"/>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Grid>
