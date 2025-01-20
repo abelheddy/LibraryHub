@@ -11,7 +11,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid>
+        <Grid MouseDown="Grid_MouseDown">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition/>
@@ -23,11 +23,53 @@
                     <ColumnDefinition Width="25"/>
                     <ColumnDefinition Width="5"/>
                 </Grid.ColumnDefinitions>
+                
                 <TextBlock Text="Log In" Foreground="White" FontSize="10" FontFamily="Monserrat"
                            Grid.Column="0" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                <Button x:Name="btnMinimizar" Background="#202020" BorderThickness="0" Content="-"
-                        Foreground="White" FontSize="16" FontFamily="Monserrat"
-                        Cursor="Hand" Grid.Column="1" Click="btnMinimizar_Click"/>
+                
+                <Button x:Name="btnMinimizar"  BorderThickness="0" Content="-"
+                        Foreground="White" FontSize="20" FontFamily="Monserrat"
+                        Cursor="Hand" Grid.Column="1" Click="btnMinimizar_Click">
+                    
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#202020"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1A1A1A"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="20" Height="20"  Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                
+                <Button x:Name="btnClose" BorderThickness="0" 
+                         Content="x" FontFamily="Monserrat" FontSize="20"  Foreground="White" Grid.Column="2" Click="btnClose_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#202020"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1A1A1A"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="20" Height="20"  Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </Grid>
         </Grid>
         <Border CornerRadius="25" Background="#202020" Height="555" Width="500"
