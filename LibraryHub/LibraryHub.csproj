@@ -108,5 +108,14 @@
   <ItemGroup>
     <Resource Include="IMG\cerrar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG\usertxt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG\keytxt.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
